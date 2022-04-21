@@ -1,4 +1,4 @@
-#include "VerletString.h"
+#include "../include/VerletString.h"
 #include <iostream>
 
 VerletString::VerletString(VerletDot* first, VerletDot* second)
