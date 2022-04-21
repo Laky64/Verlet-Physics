@@ -93,7 +93,7 @@ void MainLoop::initGameObjects()
     spawnCube(550, 50);
     spawnCube(750, 250);
     spawnCube(850, 450);
-    spawnCloth(8, 50, 30, 500,50);
+    spawnCloth(20, 10, 10, 500,50);
    
     for (VerletObject& it : Objects)
     {
