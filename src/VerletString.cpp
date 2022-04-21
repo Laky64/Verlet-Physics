@@ -1,24 +1,24 @@
 #include "../include/VerletString.h"
 #include <iostream>
+#include "math.h"
 
-VerletString::VerletString(VerletDot* first, VerletDot* second)
+VerletString::VerletString(VerletDot *first, VerletDot *second)
 {
-	lenght = distance(first->getPosition(),second->getPosition());
+	lenght = distance(first->getPosition(), second->getPosition());
 	string[0].color = first->getColor();
 	string[1].color = second->getColor();
 	stiffness = 1;
 	indexFirst = first->index;
 	indexSecond = second->index;
-	
 }
 
 VerletString::~VerletString()
 {
 }
 
-void VerletString::update(bool Mouse, VerletDot* first, VerletDot* second)
+void VerletString::update(bool Mouse, VerletDot *first, VerletDot *second)
 {
-	
+
 	first->updatePosition(Mouse);
 	second->updatePosition(Mouse);
 	const float dist = distance(first->getPosition(), second->getPosition());
@@ -30,7 +30,7 @@ void VerletString::update(bool Mouse, VerletDot* first, VerletDot* second)
 	const float m1 = second->getMass() / (first->getMass() + second->getMass());
 	const float m2 = first->getMass() / (first->getMass() + second->getMass());
 
-	first->addPosition(sf::Vector2f(offsetx * m1,offsety * m1) );
+	first->addPosition(sf::Vector2f(offsetx * m1, offsety * m1));
 	second->addPosition(sf::Vector2f(-offsetx * m2, -offsety * m2));
 
 	string[0].position = first->getPosition();
@@ -39,7 +39,7 @@ void VerletString::update(bool Mouse, VerletDot* first, VerletDot* second)
 	end = second->getPosition();
 }
 
-void VerletString::render(sf::RenderWindow* window)
+void VerletString::render(sf::RenderWindow *window)
 {
 	window->draw(string, 2, sf::Lines);
 }
