@@ -1,4 +1,4 @@
-#include "VerletDot.h"
+#include "../include/VerletDot.h"
 #include <iostream>
 
 bool VerletDot::holdPoint = 0;
