@@ -1,4 +1,4 @@
-#include "VerletObject.h"
+#include "../include/VerletObject.h"
 
 
 VerletObject::VerletObject(std::vector<VerletDot*> Dots, std::list<VerletString> Strings, int index, int colliding)
